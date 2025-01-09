@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Psycho Pâte{% endblock %}
+
+{% block body %}
+<h1>Bienvenue chez Psycho Pâte</h1>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for pizza in pizzas %}
+        <h2> {{pizza.name}} </h2>
+        <p> {{pizza.content}} </p>
+        <a href=" {{path('app_update', {'id' : pizza.id})}}">Modifier</a>
+
+        {# BOUTON SUPPRIMER #}
+        <form method="POST" onsubmit="return confirm('Confirmer la suppression ?')" action="{{ path('app_delete', {'id': pizza.id}) }}">
+            <input type="hidden" name="_method" value="delete"> {#Cette ligne est pour eviter les conflits --> creuser pourquoi quand meme #}
+            <input type="hidden" name="_token" value=" {{ csrf_token('SUP' ~ pizza.id) }}"> 
+            <input id="delete" type="submit" value="Supprimer">
+        </form>
+    {% endfor %}
+{% endblock %}

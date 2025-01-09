@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une pizza{% endblock %}
+
+{% block body %}
+    {{form_start(pizza_form)}}
+
+    {{ form_row(pizza_form.name, {
+        'label': 'Nom de votre pizza',
+        'label_attr' : {'class': 'form_label'},
+        'attr': {'placeholder': 'Entrez le nom de votre pizza', 'class': 'form-input'}
+    }) }}
+
+    {{ form_row(pizza_form.content, {
+        'label': 'Décrivez votre pizza',
+        'label_attr': {'class': 'form-label'},
+        'attr': {'placeholder': 'Entrez le contenu', 'class' : 'form-input'}
+    }) }}
+
+    {{form_widget(pizza_form)}}
+    <button>Valider</button>
+
+    {{form_end(pizza_form)}}
+
+
+{% endblock %}

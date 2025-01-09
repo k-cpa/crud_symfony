@@ -1,3 +1,29 @@
-body {
-    background-color: skyblue;
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
+
+body {
+    background-color: #F2F2F0;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    width: 100%;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5rem;
+    padding-left: 5%;
+    padding-top: 5%;
+} 
+
+
+
