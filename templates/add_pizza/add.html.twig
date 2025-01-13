@@ -17,6 +17,18 @@
         'attr': {'placeholder': 'Entrez le contenu', 'class' : 'form-input'}
     }) }}
 
+    {{ form_row(pizza_form.patte, {
+        'label': 'Choisissez votre type de patte',  
+        'label_attr': {'class': 'form-label'},    
+        'attr': {'class': 'form-select'}          
+    }) }}
+
+    {{ form_row(pizza_form.ingredient, {
+        'label': 'Choisissez votre ingrédient spécial',  
+        'label_attr': {'class': 'form-label'},    
+        'attr': {'class': 'form-select'}          
+    }) }}
+
     {{form_widget(pizza_form)}}
     <button>Valider</button>
 

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    <h1>Create User</h1>
+    {{ form_start(userForm) }}
+
+        {{ form_row(userForm.email, {
+            'label': 'Votre adresse mail',
+            'label_attr': {'class': 'form_label'},
+            'attr': {'placeholder': 'Entrez votre adresse mail', 'class': 'form-input'}
+        }) }}
+
+        {{ form_row(userForm.password, {
+            'label': 'Votre mot de passe',
+            'label_attr': {'class': 'form_label'},
+            'attr': {'placeholder': 'Entrez votre mot de passe', 'class': 'form-input'}
+        }) }}
+
+        {{ form_widget(userForm) }}
+            <button>Valider</button>
+
+    {{ form_end(userForm) }}
+{% endblock %}

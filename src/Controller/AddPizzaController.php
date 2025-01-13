@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AddPizzaController extends AbstractController
 {
+    // Pour les prochains projets voir la correction LUDO pour faire un ADDUPDATE en une seule function !! 
     #[Route('/add/pizza', name: 'app_add_pizza')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -25,6 +26,11 @@ class AddPizzaController extends AbstractController
 
         // On vérifie si formulaire est soumis et qu'il est valide
         if ($pizzaForm->isSubmitted() && $pizzaForm->isValid()) {
+
+            // Gestion relations Many to Many
+            // foreach($pizza->getIngredient() as $Ingredient) {
+            //     $Ingredient->addPizza($pizza);
+            // }
 
             // On marque les infos de l'objet article prêt a être envoyé en database
             $entityManager->persist($pizza);

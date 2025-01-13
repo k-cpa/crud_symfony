@@ -12,7 +12,16 @@
 
     {% for pizza in pizzas %}
         <h2> {{pizza.name}} </h2>
-        <p> {{pizza.content}} </p>
+        <img src="{{ asset('uploads/' ~ pizza.imageName) }}" alt="">
+        <p>description : {{pizza.content}} </p>
+        <p> type de patte : {{pizza.patte.type}} </p>
+        <ul>
+            {% for Ingredient in pizza.Ingredient %}
+            <li> {{ Ingredient.name}} </li>
+            {% else %}
+            <li>Aucun ingrédient spécial pour cette pizza</li>
+            {% endfor %}
+        </ul>
         <a href=" {{path('app_update', {'id' : pizza.id})}}">Modifier</a>
 
         {# BOUTON SUPPRIMER #}
