@@ -12,7 +12,9 @@
 
     {% for pizza in pizzas %}
         <h2> {{pizza.name}} </h2>
-        <img src="{{ asset('uploads/' ~ pizza.imageName) }}" alt="">
+        <div class="img_wrapper">
+            <img src="{{asset('uploads/images/' ~ pizza.imageName) }}" alt="Image de la pizza {{pizza.name}}">
+        </div>
         <p>description : {{pizza.content}} </p>
         <p> type de patte : {{pizza.patte.type}} </p>
         <ul>
