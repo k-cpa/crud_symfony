@@ -31,6 +31,7 @@ class Pizza
     #[ORM\Column( nullable: true)]
     private ?string $imageName = null;
 
+    // Obligatoire car bug avec symfony qui ne prend pas si on change uniquement une image
     #[ORM\Column(nullable: true)]
     private ?DateTimeImmutable $updatedAt = null;
 
